@@ -6,26 +6,26 @@
         message: "", // Mensaje
         data: {
             number: 0, // Número evaluado
-            result: "" // Resultado esperado
+            resultado: "" // resultadoado esperado
             }
     }
  * */ 
-    export default function fizzBuzz (number) {
+    export function fizzBuzz (number) {
 	try {
 		if (typeof number !== 'number' || isNaN(number)) {
 			throw new Error('Wrong input');
         }
 
 
-        let result = '';
+        let resultado = '';
         if (number % 3 === 0 && number % 5 === 0) {
-			result = 'FizzBuzz';
+			resultado = 'FizzBuzz';
 		} else if (number % 3 === 0) {
-			result = 'Fizz';
+			resultado = 'Fizz';
 		} else if (number % 5 === 0) {
-			result = 'Buzz';
+			resultado = 'Buzz';
 		} else {
-			result = String(number);
+			resultado = String(number);
 		}
 
         return {
@@ -33,7 +33,7 @@
 			message: 'The number is correct',
 			data: {
 				number,
-				result
+				resultado
 			}
 		};
 
@@ -43,7 +43,7 @@
 			message: error.message,
 			data: {
 				number,
-				result: ''
+				resultado: ''
 			}
 		};
 	}
