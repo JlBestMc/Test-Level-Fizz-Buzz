@@ -1,5 +1,5 @@
 import { expect, describe, test } from "@jest/globals";
-import { fizzBuzz } from "../src/fizzBuzz";
+import { fizzBuzz } from "../src/core/fizzBuzz.js";
 
 describe('FizzBuzz test for multiples of 3 and 5', () => {
        
@@ -41,12 +41,24 @@ describe('FizzBuzz test for multiples of 3 and 5', () => {
              */
 
             // Arrange
+            let valor_entrada = 10;
+            let respuesta_esperada = {
+                status: "ok", // Código indicando éxito
+                message: "El número es divisible por 3", // Mensaje de validación
+                data: {
+                    input: 10,  // Número evaluado
+                    output: "Buzz" // Resultado esperado
+                }}
 
             // Act
+            let resultado = fizzBuzz(valor_entrada);
     
             // Assert
+            expect(typeof resultado.data.input).toBe("number"); // valida que input sea un número
+            expect(resultado).toEqual(respuesta_esperada); // valida estructura de respuesta
+            expect(resultado.data.output).toBe("Buzz"); // valida que el valor output corresponda al expect
     
-        })
+        });
 
         test('returns FizzBuzz when multiple of 3 and 5', () => {
             //Gherking test

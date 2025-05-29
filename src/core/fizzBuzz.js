@@ -10,7 +10,7 @@
             }
     }
  * */ 
-    function fizzBuzz (number) {
+    export default function fizzBuzz (number) {
 	try {
 		if (typeof number !== 'number' || isNaN(number)) {
 			throw new Error('Wrong input');
