@@ -10,3 +10,11 @@
             }
     }
  * */ 
+    function fizzBuzz (number) {
+	try {
+		if (typeof number !== 'number' || isNaN(number)) {
+			throw new Error('Entrada no válida');
+        }
+
+        let result: "";
+        
