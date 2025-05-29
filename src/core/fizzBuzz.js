@@ -13,7 +13,7 @@
     function fizzBuzz (number) {
 	try {
 		if (typeof number !== 'number' || isNaN(number)) {
-			throw new Error('Entrada no válida');
+			throw new Error('Wrong input');
         }
 
 
@@ -29,12 +29,23 @@
 		}
 
         return {
-  	        status: "", // Código indicando éxito o error
-  	        message: "", // Mensaje
-  	        data: {
-  		    number: 0, // Número evaluado
-  		    result: "" // Resultado esperado
-  	    }
-    }
+			status: 'ok',
+			message: 'The number is correct',
+			data: {
+				number,
+				result
+			}
+		};
 
+    } catch (error) {
+		return {
+			status: 'error',
+			message: error.message,
+			data: {
+				number,
+				result: ''
+			}
+		};
+	}
+}
         
