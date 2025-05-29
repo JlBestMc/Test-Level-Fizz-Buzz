@@ -16,5 +16,25 @@
 			throw new Error('Entrada no válida');
         }
 
-        let result: "";
+
+        let result = '';
+        if (number % 3 === 0 && number % 5 === 0) {
+			result = 'FizzBuzz';
+		} else if (number % 3 === 0) {
+			result = 'Fizz';
+		} else if (number % 5 === 0) {
+			result = 'Buzz';
+		} else {
+			result = String(number);
+		}
+
+        return {
+  	        status: "", // Código indicando éxito o error
+  	        message: "", // Mensaje
+  	        data: {
+  		    number: 0, // Número evaluado
+  		    result: "" // Resultado esperado
+  	    }
+    }
+
         
