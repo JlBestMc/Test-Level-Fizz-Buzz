@@ -3,12 +3,24 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link href="./src/styles/input.css" rel="stylesheet" />
     <title>FizzBuzz</title>
   </head>
-  <body>
-    <h1 class="bg-linear from-cyan-500 to-violet-500">FizzBuzz</h1>
+  <body class="flex flex-col items-center">
+    <h1
+      class="text-5xl font-bold lg:text-left text-center tracking-tight text-white lg:text-8xl xl:text-9xl"
+    >
+      <span
+        class="text-transparent bg-clip-text bg-gradient-to-r from-[#7534bb] via-[#de4b4b] to-yellow-500"
+      >
+        FizzBuzz
+      </span>
+    </h1>
 
-    <form class="max-w-sm mx-auto">
+    <form
+      class="max-w-sm mx-auto flex items-center flex-col"
+      id="fizzbuzz-form"
+    >
       <div class="mb-5">
         <label
           for="email"
@@ -16,9 +28,9 @@
           >Your number</label
         >
         <input
-          type="email"
-          id="email"
-          class="bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block w-full p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
+          type="number"
+          id="number-input"
+          class="w-72 bg-gray-50 border border-gray-300 text-gray-900 text-sm rounded-lg focus:ring-blue-500 focus:border-blue-500 block p-2.5 dark:bg-gray-700 dark:border-gray-600 dark:placeholder-gray-400 dark:text-white dark:focus:ring-blue-500 dark:focus:border-blue-500"
           placeholder="Example: 15"
           required
         />
@@ -26,12 +38,26 @@
 
       <button
         type="submit"
-        class="text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm w-full sm:w-auto px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
+        class="w-52 text-white bg-blue-700 hover:bg-blue-800 focus:ring-4 focus:outline-none focus:ring-blue-300 font-medium rounded-lg text-sm sm:w-72 px-5 py-2.5 text-center dark:bg-blue-600 dark:hover:bg-blue-700 dark:focus:ring-blue-800"
       >
         Submit
       </button>
     </form>
-
+    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5 w-2/4">
+      <table
+        class="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100"
+      >
+        <thead
+          class="text-xs text-white uppercase bg-blue-600 dark:text-white text-center"
+        >
+          <tr>
+            <th scope="col" class="px-6 py-3">Input</th>
+            <th scope="col" class="px-6 py-3">Result</th>
+          </tr>
+        </thead>
+        <tbody class="text-black text-xl" id="display-data"></tbody>
+      </table>
+    </div>
     <script type="module" src="/src/main.js"></script>
   </body>
 </html>

@@ -23,16 +23,16 @@
         <div class='clearfix'>
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.92% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Statements</span>
-                <span class='fraction'>10/13</span>
+                <span class='fraction'>16/18</span>
             </div>
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">83.33% </span>
+                <span class="strong">91.66% </span>
                 <span class="quiet">Branches</span>
-                <span class='fraction'>10/12</span>
+                <span class='fraction'>11/12</span>
             </div>
         
             
@@ -44,9 +44,9 @@
         
             
             <div class='fl pad1y space-right2'>
-                <span class="strong">76.92% </span>
+                <span class="strong">88.88% </span>
                 <span class="quiet">Lines</span>
-                <span class='fraction'>10/13</span>
+                <span class='fraction'>16/18</span>
             </div>
         
             
@@ -61,7 +61,7 @@
             </div>
         </template>
     </div>
-    <div class='status-line medium'></div>
+    <div class='status-line high'></div>
     <pre><table class="coverage">
 <tr><td class="line-count quiet"><a name='L1'></a><a href='#L1'>1</a>
 <a name='L2'></a><a href='#L2'>2</a>
@@ -113,7 +113,11 @@
 <a name='L48'></a><a href='#L48'>48</a>
 <a name='L49'></a><a href='#L49'>49</a>
 <a name='L50'></a><a href='#L50'>50</a>
-<a name='L51'></a><a href='#L51'>51</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<a name='L51'></a><a href='#L51'>51</a>
+<a name='L52'></a><a href='#L52'>52</a>
+<a name='L53'></a><a href='#L53'>53</a>
+<a name='L54'></a><a href='#L54'>54</a>
+<a name='L55'></a><a href='#L55'>55</a></td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -126,25 +130,29 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
+<span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-yes">3x</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">2x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-yes">1x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-no">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">3x</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">4x</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -175,52 +183,56 @@
             }
     }
  * */ 
-    export function fizzBuzz (number) {
-	try {
-		<span class="missing-if-branch" title="if path not taken" >I</span>if (typeof number !== 'number' || isNaN(number)) {
-<span class="cstat-no" title="statement not covered" >			throw new Error('Wrong input');</span>
-        }
+export function fizzBuzz(number) {
+  try {
+    <span class="missing-if-branch" title="if path not taken" >I</span>if (typeof number !== 'number' || isNaN(number)) {
+<span class="cstat-no" title="statement not covered" >      throw new Error('Entrada no válida');</span>
+    }
 &nbsp;
+    let output = '';
+    let message = '';
 &nbsp;
-        let resultado = '';
-        if (number % 3 === 0 &amp;&amp; number % 5 === 0) {
-			resultado = 'FizzBuzz';
-		} else if (number % 3 === 0) {
-			resultado = 'Fizz';
-		} else if (number % 5 === 0) {
-			resultado = 'Buzz';
-		} else <span class="missing-if-branch" title="else path not taken" >E</span>{
-<span class="cstat-no" title="statement not covered" >			resultado = String(number);</span>
-		}
+    if (number % 3 === 0 &amp;&amp; number % 5 === 0) {
+      output = 'FizzBuzz';
+      message = 'El número es divisible por 3 y 5';
+    } else if (number % 3 === 0) {
+      output = 'Fizz';
+      message = 'El número es divisible por 3';
+    } else if (number % 5 === 0) {
+      output = 'Buzz';
+      message = 'El número es divisible por 5';
+    } else {
+      output = String(number);
+      message = 'El número no es divisible por 3 ni 5';
+    }
 &nbsp;
-        return {
-			status: 'ok',
-			message: 'The number is correct',
-			data: {
-				number,
-				resultado
-			}
-		};
-&nbsp;
-    } catch (error) {
-<span class="cstat-no" title="statement not covered" >		return {</span>
-			status: 'error',
-			message: error.message,
-			data: {
-				number,
-				resultado: ''
-			}
-		};
-	}
+    return {
+      status: 'ok',
+      message,
+      data: {
+        input: number,
+        output
+      }
+    };
+  } catch (error) {
+<span class="cstat-no" title="statement not covered" >    return {</span>
+      status: 'error',
+      message: error.message,
+      data: {
+        input: number,
+        output: ''
+      }
+    };
+  }
 }
-        </pre></td></tr></table></pre>
+   </pre></td></tr></table></pre>
 
                 <div class='push'></div><!-- for sticky footer -->
             </div><!-- /wrapper -->
             <div class='footer quiet pad2 space-top1 center small'>
                 Code coverage generated by
                 <a href="https://istanbul.js.org/" target="_blank" rel="noopener noreferrer">istanbul</a>
-                at 2025-05-29T11:22:16.634Z
+                at 2025-06-02T09:48:20.000Z
             </div>
         <script src="prettify.js"></script>
         <script>
