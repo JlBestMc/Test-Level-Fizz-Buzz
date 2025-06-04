@@ -1,16 +1,21 @@
-/**
- * Responsabilidad: gestionar el los flujos de que recibe y muestra la interfáz
- * */ 
+const tbody = document.getElementById('display-data');
 
-const display = document.getElementById('display-data');
+export function addToHistory(result) {
+  if (result.status !== 'ok') return;
 
-// Historial en memoria
-const record = [];
+  const row = document.createElement('tr');
 
-export function mostrarResultado(resultado) {
-  const row = document.createElement("tr");
+  const cellInput = document.createElement('td');
+  cellInput.textContent = result.data.input;
+  cellInput.classList.add('border', 'px-4', 'py-2');
 
-  const inputCell = document.createElement("td");
-    inputCell.textContent = resultado.data.output;
-    inputCell.classList.add("w-full");
+  const cellOutput = document.createElement('td');
+  cellOutput.textContent = result.data.output;
+  cellOutput.classList.add('border', 'px-4', 'py-2');
+
+  fila.appendChild(cellInput);
+  fila.appendChild(cellOutput);
+
+  tbody.appendChild(row);
 }
+

@@ -3,7 +3,16 @@
  * */ 
 
 import { fizzBuzz } from '../core/fizzBuzz.js';
-import { mostrarResultado, agregarAlHistorial } from './dom.js';
+import { addToHistory } from './dom.js';
 
-const formulario = document.querySelector('form');
-const inputNumero = document.getElementById('number-input');
+const form = document.querySelector('form');
+const inputNumber = document.getElementById('number-input');
+
+form.addEventListener('submit', (e) => {
+  e.preventDefault();
+
+  const value = Number(inputNumber.value);
+  const result = fizzBuzz(value);
+
+  addToHistory(result);
+});
