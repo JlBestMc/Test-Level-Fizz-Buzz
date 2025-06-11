@@ -1,5 +1,7 @@
 import { defineConfig } from 'vite'
 
+const repoName = 'js-test-level-fizz-buzz'
+
 export default defineConfig({
-  // No necesitas plugins aquí para Tailwind
+  base: `/${repoName}/`, // 👈 muy importante para GitHub Pages
 })
