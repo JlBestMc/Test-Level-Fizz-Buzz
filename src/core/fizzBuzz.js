@@ -1,15 +1,4 @@
-/**
- * Responsabilidad: gestionar la lógica de FizzBuzz
- * Recuerda que la estructura de las respuestas debe ser estructurada:
- *  {
-        status: "", // Código indicando éxito o error
-        message: "", // Mensaje
-        data: {
-            number: 0, // Número evaluado
-            resultado: "" // resultadoado esperado
-            }
-    }
- * */ 
+
 export function fizzBuzz(number) {
   try {
     if (typeof number !== 'number' || isNaN(number)) {
@@ -29,7 +18,7 @@ export function fizzBuzz(number) {
       output = 'Buzz';
       message = 'El número es divisible por 5';
     } else {
-      output = String(number);
+      output = number;
       message = 'El número no es divisible por 3 ni 5';
     }
 

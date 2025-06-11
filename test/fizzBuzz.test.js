@@ -67,7 +67,7 @@ describe('FizzBuzz test for multiples of 3 and 5', () => {
                 message: "El número no es divisible por 3 ni 5",
                 data: {
                     input: 8,
-                    output: "8"
+                    output: 8
                 }
             };
 
@@ -75,7 +75,7 @@ describe('FizzBuzz test for multiples of 3 and 5', () => {
 
             expect(typeof resultado.data.input).toBe("number");
             expect(resultado).toEqual(respuesta_esperada);
-            expect(resultado.data.output).toBe("8");
+            expect(resultado.data.output).toBe(8);
             
         });
     }

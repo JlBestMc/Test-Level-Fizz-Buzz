@@ -4,18 +4,42 @@ export function addToHistory(result) {
   if (result.status !== 'ok') return;
 
   const row = document.createElement('tr');
+  row.classList.add('text-center');
 
   const cellInput = document.createElement('td');
   cellInput.textContent = result.data.input;
-  cellInput.classList.add('border', 'px-4', 'py-2');
+  cellInput.classList.add('px-4', 'py-2');
 
   const cellOutput = document.createElement('td');
-  cellOutput.textContent = result.data.output;
-  cellOutput.classList.add('border', 'px-4', 'py-2');
+  cellOutput.classList.add('px-4', 'py-2', 'flex', 'justify-center', 'flex-col', 'items-center');
 
-  fila.appendChild(cellInput);
-  fila.appendChild(cellOutput);
+  const text = document.createElement('p');
+  text.textContent = result.data.output;
+  cellOutput.appendChild(text);
+
+  const output = String(result.data.output).toLowerCase();
+  
+  if (["fizz"].includes(output)) {
+    text.textContent = "";
+    const img = document.createElement('img');
+    img.src = `/images/${output}.png`;
+    img.classList.add('w-50', 'h-50');
+    cellOutput.appendChild(img);
+  }
+
+  if (["fizzbuzz", "buzz"].includes(output)) {
+    text.textContent = "";
+    const img = document.createElement('img');
+    img.src = `/images/${output}.png`;
+    img.classList.add('w-40', 'h-50');
+    cellOutput.appendChild(img);
+  }
+
+
+  row.appendChild(cellInput);
+  row.appendChild(cellOutput);
 
   tbody.appendChild(row);
+
 }
 

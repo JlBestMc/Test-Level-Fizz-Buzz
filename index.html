@@ -6,7 +6,9 @@
     <link href="./src/styles/input.css" rel="stylesheet" />
     <title>FizzBuzz</title>
   </head>
-  <body class="flex flex-col items-center">
+  <body
+    class="flex flex-col items-center mt-3 bg-[url('/images/bg.jpg')] bg-cover bg-center h-64 w-full"
+  >
     <h1
       class="text-5xl font-bold lg:text-left text-center tracking-tight text-white lg:text-8xl xl:text-9xl"
     >
@@ -17,8 +19,7 @@
       </span>
     </h1>
 
-    <!-- From Uiverse.io by Anasmalik57 -->
-    <form class="flex flex-row my-5">
+    <form class="flex flex-row my-5" id="fizzbuzz-form">
       <input
         type="number"
         id="number-input"
@@ -26,7 +27,7 @@
         autocomplete="off"
         class="bg-zinc-200 text-zinc-600 font-mono ring-1 ring-zinc-400 focus:ring-2 focus:ring-rose-400 outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 rounded-full px-4 py-2 shadow-md focus:shadow-lg focus:shadow-rose-400"
       />
-      <a class="cursor-pointer flex" id="submit">
+      <button class="cursor-pointer flex" type="submit">
         <span
           class="rounded-full bg-zinc-200 text-zinc-600 font-mono ring-1 ring-zinc-400 focus:ring-2 focus:ring-rose-400 outline-none duration-300 placeholder:text-zinc-600 placeholder:opacity-50 px-2 py-2 rotate-[45deg] ml-2 shadow-md focus:shadow-lg focus:shadow-rose-400"
         >
@@ -122,22 +123,21 @@
             ></path>
           </svg>
         </span>
-      </a>
+      </button>
     </form>
 
-    <div class="relative overflow-x-auto shadow-md sm:rounded-lg mt-5 w-2/4">
+    <div class="shadow-md sm:rounded-lg mt-5 w-2/4 mb-5">
+      <!--relative overflow-x-auto-->
       <table
-        class="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100"
+        class="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100 bg-gradient-to-r from-blue-800 to-purple-600 rounded-xl shadow-2xl overflow-hidden p-8 space-y-8"
       >
-        <thead
-          class="text-xs text-white uppercase bg-blue-600 dark:text-white text-center"
-        >
+        <thead class="text-xs text-white uppercase dark:text-white text-center">
           <tr>
             <th scope="col" class="px-6 py-3">Input</th>
             <th scope="col" class="px-6 py-3">Result</th>
           </tr>
         </thead>
-        <tbody class="text-black text-xl" id="display-data"></tbody>
+        <tbody class="text-white text-xl" id="display-data"></tbody>
       </table>
     </div>
     <script type="module" src="/src/main.js"></script>
