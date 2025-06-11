@@ -1,2 +1,2 @@
-import './styles/output.css';
+import '../src/style.css';
 import './ui/events';
