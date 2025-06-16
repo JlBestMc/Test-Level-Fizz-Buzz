@@ -8,10 +8,10 @@ export function addToHistory(result) {
 
   const cellInput = document.createElement('td');
   cellInput.textContent = result.data.input;
-  cellInput.classList.add('px-4', 'py-2');
+  cellInput.classList.add('px-4', 'py-2', 'w-100', 'h-60');
 
   const cellOutput = document.createElement('td');
-  cellOutput.classList.add('px-4', 'py-2', 'flex', 'justify-center', 'flex-col', 'items-center');
+  cellOutput.classList.add('w-100', 'h-60',  'px-4', 'py-2', 'flex', 'justify-center', 'flex-col', 'items-center');
 
   const text = document.createElement('p');
   text.textContent = result.data.output;
@@ -22,16 +22,16 @@ export function addToHistory(result) {
   if (["fizz"].includes(output)) {
     text.textContent = "";
     const img = document.createElement('img');
-    img.src = `/images/${output}.png`;
-    img.classList.add('w-50', 'h-50');
+    img.src = `src/images/${output}.png`;
+    img.classList.add('w-50', 'h-50', 'object-contain');
     cellOutput.appendChild(img);
   }
 
   if (["fizzbuzz", "buzz"].includes(output)) {
     text.textContent = "";
     const img = document.createElement('img');
-    img.src = `/images/${output}.png`;
-    img.classList.add('w-40', 'h-50');
+    img.src = `src/images/${output}.png`;
+    img.classList.add('w-40', 'h-50', 'object-contain');
     cellOutput.appendChild(img);
   }
 
