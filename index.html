@@ -4,9 +4,10 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>FizzBuzz</title>
+    <link rel="stylesheet" href="./src/styles/output.css" />
   </head>
   <body
-    class="flex flex-col items-center mt-3 bg-[url('/images/bg.jpg')] bg-cover bg-center h-64 w-full"
+    class="flex flex-col items-center mt-3 bg-[url('../images/bg.jpg')] bg-cover bg-center h-64 w-full"
   >
     <h1
       class="text-5xl font-bold lg:text-left text-center tracking-tight text-white lg:text-8xl xl:text-9xl"
@@ -125,20 +126,23 @@
       </button>
     </form>
 
-    <div class="shadow-md sm:rounded-lg mt-5 w-2/4 mb-5">
+    <div class="shadow-md sm:rounded-lg mt-5 w-2/4">
       <!--relative overflow-x-auto-->
       <table
         class="w-full text-sm text-left rtl:text-right text-blue-100 dark:text-blue-100 bg-gradient-to-r from-blue-800 to-purple-600 rounded-xl shadow-2xl overflow-hidden p-8 space-y-8"
       >
-        <thead class="text-xs text-white uppercase dark:text-white text-center">
+        <thead class="text-sm text-white uppercase dark:text-white text-center">
           <tr>
             <th scope="col" class="px-6 py-3">Input</th>
             <th scope="col" class="px-6 py-3">Result</th>
           </tr>
         </thead>
-        <tbody class="text-white text-xl" id="display-data"></tbody>
+        <tbody
+          class="bg-gradient-to-r from-[#de4b4b] to-yellow-500 bg-clip-text text-transparent font-bold text-4xl"
+          id="display-data"
+        ></tbody>
       </table>
     </div>
-    <script type="module" src="/src/main.js"></script>
+    <script type="module" src="./src/main.js"></script>
   </body>
 </html>

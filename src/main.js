@@ -1,2 +1,1 @@
-import '../src/index.css';
-import './ui/events';
+import './ui/events.js';
